@@ -1,8 +1,6 @@
 # C & Assembly
 C & Assembly - COMPSCI 240
 ## Project 2 : Temperature Conversions
-### Original Instructions:
-#### [https://montcs.bloomu.edu/240/Asns/01.basics.shtml](https://montcs.bloomu.edu/240/Asns/01.basics.shtml)
 --------------------
 **Files:**
 
@@ -19,9 +17,7 @@ C & Assembly - COMPSCI 240
 --------------------
 **INSTRUCTIONS:**
 
-CompSci 240, Low-level programming
-
-Temperature Conversions
+###CompSci 240, Low-level programming - Temperature Conversions
 
 Write each of the following C programs, compile them and run them. For each one, submit the source file.
 
