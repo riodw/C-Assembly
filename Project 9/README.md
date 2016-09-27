@@ -1,21 +1,16 @@
 # C & Assembly
 C & Assembly - COMPSCI 240
-## Project 9 : Conversions of Unsigned Numbers
+## Project 9 : Harmonic Mean
 ### Original Instructions:
 #### [https://montcs.bloomu.edu/240/Asns/Asn.extra-credit/XC.harmonic-mean-C.html](https://montcs.bloomu.edu/240/Asns/Asn.extra-credit/XC.harmonic-mean-C.html)
 --------------------
 **INSTRUCTIONS:**
-<div class="heading">
-
 CompSci 240, C and Assembly Programming
 
 assignment: Harmonic Mean
 
 points?
 
-</div>
-
-<div class="assignment">
 
 ## Overview
 
@@ -45,15 +40,11 @@ Source code files must begin with a comment containing your name, the name of th
 /*
 </pre>
 
-<div class="">
-
 ## Grading
 
 *   _3 pts _ program compiles and runs.
 *   _2 pts _ program produces correct answers.
 *   _5 pts _ program source code is well written, using pointers.
-
-</div>
 
 ## Sample data:
 
@@ -88,7 +79,3 @@ Harmonic mean of 100 values is 133.999647
 Enter <= 10,000 values:
 Harmonic mean of 10 values is 240.107485
 </pre>
-
-</div>
-
-<script type="text/javascript">ts_validate();</script>
