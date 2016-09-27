@@ -136,7 +136,7 @@ big prime: _               1500450271_  _     1500450271_  _2e+09_
 
 Your name's hexadecimal output will probably be different from this example; that's okay.
 
-<dt>basic input</dt>
+**basic input**
 
 <dd>Write a program that prompts you for your name, an integer, and a real (floating-point) number, then prints them back out on a single line. Example output should look similar to this:
 
@@ -162,9 +162,9 @@ F: 98.6   C: 37   K: 310.15
 
 </dd>
 
-<dt>`for` loop, tabular output</dt>
+**`for` loop, tabular output**
 
-<dd>Write a program that produces a wind-chill chart. This is a chart that shows the "wind chill temperature" for a given air temperature (in degrees Fahrenheit) and wind speed (in miles per hour). A sample is shown below.
+Write a program that produces a wind-chill chart. This is a chart that shows the "wind chill temperature" for a given air temperature (in degrees Fahrenheit) and wind speed (in miles per hour). A sample is shown below.
 
 Your program must prompt the user for minimum and maximum temperatures, and minimum and maximum wind speeds; then produce a two-dimensional chart like the one below. Temperatures are in increments of two degrees; wind speeds are in increments of 2.5 mph. Notice that the temperatures range from _highest_ (top row) to _lowest_ (bottom row).
 
@@ -190,7 +190,7 @@ Min, Max wind: <span class="user">0 9</span>
  -8.0 |    30.8  -14.6  -19.9  -23.3
 </pre>
 
-<dt>character strings</dt>
+**character strings**
 
 <dd>Write a program that accepts character strings from the user, and copies them into a single long string, until either (a) the user enters an empty string (nothing except possibly a "newline" — `'\n'`), or (b) 255 characters have been copied. If you use `fgets()` it will include the terminating `'\n'`, which must _not_ be copied. After all user input is done, the resulting string must be terminated with a NULL character and printed out.
 
@@ -208,5 +208,3 @@ Your input:
 abcdeFG HIjkL
 
 </pre>
-
-</dd>
