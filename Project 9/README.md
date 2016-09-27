@@ -5,6 +5,7 @@ C & Assembly - COMPSCI 240
 #### [https://montcs.bloomu.edu/240/Asns/Asn.extra-credit/XC.harmonic-mean-C.html](https://montcs.bloomu.edu/240/Asns/Asn.extra-credit/XC.harmonic-mean-C.html)
 --------------------
 **INSTRUCTIONS:**
+
 CompSci 240, C and Assembly Programming
 
 assignment: Harmonic Mean
