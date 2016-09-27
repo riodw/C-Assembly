@@ -1,0 +1,27 @@
+     1                                  ; asm implementation of recursive factorial
+     2                                  	
+     3                                  	global fact
+     4                                  	section .text
+     5                                  	
+     6                                  ; expects - RDI - n
+     7                                  ; returns: RAX - factorial(n)
+     8                                  fact:
+     9 00000000 55                      	push rbp
+    10 00000001 4889E5                  	mov rbp, rsp
+    11                                  
+    12 00000004 4883FF02                	cmp rdi, 2
+    13 00000008 760F                    	jbe .basecase ; jump to basecase if rdi is BELLOW "2"
+    14                                  .recurse:
+    15 0000000A 57                      	push rdi		; save n for later
+    16 0000000B 48FFCF                  	dec rdi		; n - 1 ....
+    17 0000000E E8EDFFFFFF              	call fact		
+    18 00000013 5F                      	pop rdi
+    19 00000014 48F7E7                  	mul rdi		; rax <-- rax * rdi
+    20 00000017 EB03                    	jmp .end
+    21                                  
+    22                                  .basecase:
+    23 00000019 4889F8                  	mov rax, rdi
+    24                                  .end:
+    25 0000001C C9                      	leave
+    26 0000001D C3                      	ret
+    27                                  ;-------------------------

@@ -1,0 +1,71 @@
+     1                                  ; recursive factorial
+     2                                  ; 2015-11-22
+     3                                  
+     4                                      section .data
+     5 00000000 256C755C6E00            fmtstring db "%lu\n",0
+     6                                  
+     7                                      extern atoi, printf
+     8                                      global main
+     9                                      section .text
+    10                                  ; expects:
+    11                                  ;   rdi - n
+    12                                  ; returns:
+    13                                  ;   rax - factorial(n)
+    14                                  fact:
+    15 00000000 55                          push rbp
+    16 00000001 4889E5                      mov rbp, rsp
+    17 00000004 4883FF02                    cmp rdi, 2		; base cases
+    18 00000008 7705                        ja .recurse
+    19 0000000A 4889F8                      mov rax, rdi		; argument is...
+    20 0000000D EB0D                        jmp .end		; ...its own factorial
+    21                                  .recurse:
+    22 0000000F 57                          push rdi		; save rdi
+    23 00000010 48FFCF                      dec rdi			; n-1
+    24 00000013 E8E8FFFFFF                  call fact		; rax <-- fact(n-1)
+    25 00000018 5F                          pop rdi			; retrieve n
+    26 00000019 48F7E7                      mul rdi			; rax <-- fact(n-1) * n
+    27                                  .end:
+    28 0000001C C9                          leave
+    29 0000001D C3                          ret
+    30                                  ;----------------
+    31                                  
+    32                                  main:
+    33 0000001E 55                          push rbp
+    34 0000001F 4889E5                      mov rbp, rsp
+    35 00000022 4883EC10                    sub rsp, 16         ; char *p, unsigned i
+    36 00000026 48897DFC                    mov [rbp-4], rdi    ; argc
+    37 0000002A 488975F4                    mov [rbp-12], rsi   ; argv
+    38 0000002E C745F001000000              mov dword [rbp-16], 1     ; i = 1
+    39                                  .whileloop:
+    40 00000035 488B45F0                    mov rax, [rbp-16]
+    41 00000039 483B45FC                    cmp rax, [rbp-4]
+    42 0000003D 732B                        jae .end
+    43 0000003F 488B7DF4                    mov rdi, [rbp-12]
+    44 00000043 4801C7                      add rdi, rax
+    45 00000046 E8(00000000)                call atoi
+    46 0000004B 4889C7                      mov rdi, rax
+    47 0000004E E8ADFFFFFF                  call fact
+    48 00000053 48BF-                       mov rdi, fmtstring
+    49 00000055 [0000000000000000] 
+    50 0000005D 4889C6                      mov rsi, rax
+    51 00000060 E8(00000000)                call printf
+    52 00000065 FF45F0                      inc dword [rbp-16]
+    53 00000068 EBCB                        jmp .whileloop
+    54                                  .end:
+    55 0000006A 4831C0                      xor rax, rax
+    56 0000006D C9                          leave
+    57 0000006E C3                          ret
+    58                                  ;----------------
+    59                                  
+    60                                  
+    61                                  ;[rdw77236@bfh103-14 4-debug]$ nasm -g -f elf64 -l factmain.lst factmain.asm 
+    62                                  ;[rdw77236@bfh103-14 4-debug]$ 
+    63                                  ;[rdw77236@bfh103-14 4-debug]$ gcc -g -o factmain factmain.o
+    64                                  ;[rdw77236@bfh103-14 4-debug]$ 
+    65                                  ;[rdw77236@bfh103-14 4-debug]$ gdb -tui factmain
+    66                                  
+    67                                  ;set disassembly-flavor intel
+    68                                  ;set disassemble-next-line on
+    69                                  ;layout split
+    70                                  ;focus asm
+    71                                  ;layout regs
