@@ -96,11 +96,11 @@ Source code files must begin with a comment containing your name, the name of th
 
 <dd>Write a program that creates some constant values, and uses formatted output to print them in a table in multiple ways. The constants are:
 
-> *   the value of π (available as the named constant `M_PI` in `<math.h>`,
-> *   Avogadro's number --- an official value is given by [NIST](http://physics.nist.gov/cgi-bin/cuu/Value?na) and copied by Wikipedia,
-> *   1500450271, which is a 10-digit prime number,
-> *   your name,
-> *   the first letter of the alphabet (your choice of upper or lower case).
+*   the value of π (available as the named constant `M_PI` in `<math.h>`,
+*   Avogadro's number --- an official value is given by [NIST](http://physics.nist.gov/cgi-bin/cuu/Value?na) and copied by Wikipedia,
+*   1500450271, which is a 10-digit prime number,
+*   your name,
+*   the first letter of the alphabet (your choice of upper or lower case).
 
 Use an appropriate variable type for each value, not a `#define`. Each value must be displayed in a field exactly 25 characters wide, in a field exactly 15 characters wide, and in a field (at least) 5 characters wide. Each field must have an underscore character ( `_` ) before and after it to make it visible.
 
