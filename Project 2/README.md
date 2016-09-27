@@ -16,11 +16,12 @@ C & Assembly - COMPSCI 240
 
 `P2File5.c` - Character Strings
 
+--------------------
 **INSTRUCTIONS:**
 
-###CompSci 240, Low-level programming
+CompSci 240, Low-level programming
 
-###Temperature Conversions
+Temperature Conversions
 
 Write each of the following C programs, compile them and run them. For each one, submit the source file.
 
