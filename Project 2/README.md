@@ -149,7 +149,7 @@ name: foobar; integer: -9999; real: 3.14159
 
 </dd>
 
-<dt>`if-else` structure</dt>
+**`if-else` structure**
 
 <dd>Write a program that converts between Celsius, Fahrenheit, and Kelvin temperatures. It must prompt the user for a temperature, and the units that temperature is in (C, c, F, f, K, or k); then convert the temperature to both of the other scales and display the result. Example output should look similar to this:
 
