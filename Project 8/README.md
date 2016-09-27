@@ -1,7 +1,9 @@
 # C & Assembly
 C & Assembly - COMPSCI 240
 ## Project 8 : Assembly-Language `puts()`
-----------------------
+### Original Instructions:
+#### [https://montcs.bloomu.edu/240/Asns/05.assembly-puts/05.assembly-puts.shtml](https://montcs.bloomu.edu/240/Asns/05.assembly-puts/05.assembly-puts.shtml)
+--------------------
 **INSTRUCTIONS**
 
 CompSci 240, C and Assembly programming
