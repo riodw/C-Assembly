@@ -1,0 +1,127 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="description" content="course assignment" />
+  <meta name="author" content="RAMontante" />
+  <link href="http://montcs.bloomu.edu/~bobmon/css/generic.css" rel="stylesheet" type="text/css" />
+   <link href="http://montcs.bloomu.edu/~bobmon/css/w3cvalid.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+  /*<![CDATA[*/
+    @import url("http://montcs.bloomu.edu/~bobmon/css/pagefmt.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/assignment.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/code-multi.css");
+  /*]]>*/
+  </style>
+  <title>CompSci 240 assembly-language puts()</title>
+</head><body>
+
+<div class="heading">
+<p>CompSci 240, C and Assembly programming</p>
+<p class="asn">assignment: Assembly-Language puts()</p>
+</div><!-- heading -->
+
+<div class="assignment">
+<h2>The task</h2>
+<p>
+  Implement the C "puts()"function as an assembly-language routine, and modify the "hello-world" assembly program to use it.
+  This means that your function: (a) must display NUL-terminated strings, instead of being told how long the strings are; (b) be able to be called from, and used by, a C program (as well as being callable by an assembly-language program).
+</p>
+
+<p>
+  Only the primitive text-based input and output services, provided by the Linux kernel via syscall, are available.
+  (Comparable services are available in 32-bit Linux via interrupt 0x80, and in Windows via DOS interrupt 0x21; the differences in usage are minor.)
+  You are expected to write a 64-bit version of the function; if you write a 32-bit version instead, you must document the differences in the comments.
+</p>
+
+<p>
+  Here are two possible algorithms for this function:
+</p>
+<pre class="boxed width45">
+;
+; expects:
+;       RDI: address of ASCIIZ string
+; returns:
+;       nothing
+</pre>
+&nbsp;
+<pre class="boxed width45">
+; algorithm:
+;       void puts(char *s) {
+;           while (*s != '\0') {
+;               /*
+;                   syscall to display a 1-character "string",
+;                   the current character of the string itself.
+;               */
+;               s++;
+;           }
+;       }
+</pre>
+&nbsp;
+<pre class="boxed width45">
+; algorithm:
+;       void puts(char *s) {
+;           int len;
+;           len = strlen(p);
+;           /* syscall to write string of length "len" */
+;       }
+;
+; also requires an implementation of strlen()
+</pre>
+
+<p>
+  These lines can serve as part of the function's comments.
+</p>
+<p>
+  If you use the second algorithm, you must also include the "strlen()" function in assembly.
+  This function is described in class, but should be modified to be C-compatible.
+</p>
+<p>
+  The basic "hello, world" program must be modified to include, and use, your function.
+  This includes adding the NUL (0) to the end of the string itself.
+</p>
+
+<h3>C-compatible function</h3>
+<p>
+This routine should also be callable from a C-language program.
+Here is a test program to exercise your function:
+<pre class="boxed width30">
+    // test-puts.c:
+    // Test puts() assembly function
+    // using command-line arguments.
+
+    void puts(char *s);
+
+    int main(int argc, char **argv)
+    {
+        for ( ; argc &gt; 1; argc--) {
+            ++argv;
+            puts( *argv );
+        }
+        return 0;
+    }
+</pre>
+This and your function can be built into a program like this:
+<pre class="boxed width30">
+nasm -f elf64  my-puts.asm
+gcc  -o test-puts  test-puts.c  my-puts.o
+</pre>
+</p>
+</div><!-- assignment -->
+
+<!-- ....................................................... -->
+<!-- This is a virtual-include file, not a complete webpage! 
+    It contains 'style="..."' parameters that mirror w3cvalid.css -->
+<hr style="clear:both;width:100%;margin-bottom:0" />
+<div id="Signature" style="float:left;margin-top:0;text-align:left;color:#999;font-size:70%;background:inherit;font-size:8pt;margin-top:0">
+Homepage: <a href="https://montcs.bloomu.edu/" title="Instructor">montcs.bloomu.edu/</a>
+ <br /><!--#config timefmt="%Y" -->&copy; 2004-<!--#echo var="DATE_LOCAL" --> Robert Montante unless otherwise indicated.  All rights reserved.
+ <br /><!--#config timefmt="%Y-%m-%d, %H:%M:%S" -->File last modified <em><!--#echo var="last_modified" --></em>
+</div>
+<div id="ValidButtons" style="float:right;margin-top:0.2ex;text-align:right;width:190px;margin:4px 0 0 0;padding:4px 0 0 0;font-size:6pt">
+ <a href="https://validator.w3.org/check?uri=referer"><img alt="Valid XHTML 1.0!" src="/includes/valid-xhtml10.png" style="border:0;width:88px;height:31px" /></a>&nbsp;<a href="https://jigsaw.w3.org/css-validator/check/referer"><img alt="Valid CSS!" src="/includes/vcss.png" style="border:0;width:88px;height:31px" /></a>
+</div>
+<!-- ....................................................... -->
+
+</body></html>

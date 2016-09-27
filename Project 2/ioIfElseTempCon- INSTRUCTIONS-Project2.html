@@ -1,0 +1,274 @@
+﻿<a href="https://montcs.bloomu.edu/240/Asns/01.basics.shtml">https://montcs.bloomu.edu/240/Asns/01.basics.shtml</a><br><br>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CompSci 240 basics asn</title>
+  <meta name="description" content="course assignment" />
+  <meta name="author" content="RAMontante" />
+  <style type="text/css">
+    @import url("http://montcs.bloomu.edu/~bobmon/css/generic.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/pagefmt.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/w3cvalid.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/code-multi.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/assignment.css");
+        div.C-code {
+            margin: 1ex 1em 1ex 1em;
+            padding: 1ex 1em 1ex 1em;
+            font-family: monospace;
+            font-size: 110%;
+        }
+        .border { border: 1px solid #000; }
+
+        table.tasks tr,
+        table.tasks tr th,
+        table.tasks tr td,
+        table.tasks {
+            margin: oex 1em 0ex 1em;
+        }
+        table.tasks thead tr th,
+        table.tasks thead tr td,
+        table.tasks thead tr,
+        table.tasks thead {
+            border-bottom: 2px solid #ddd;
+        }
+
+        dl.tasks dt code,
+        dl.tasks dt {
+            font-weight: bold;
+        }
+
+        dl.tasks dt {
+            margin-top:2ex;
+            border-top: 1px solid #666;
+            padding-top:2px;
+        }
+
+        dl.tasks dd {
+        }
+
+        .compact {
+            padding-top: 0px; padding-bottom: 0px;
+            margin-top: 0px; margin-bottom: 0px;
+        }
+        .compact li {
+            padding-top: 0px; padding-bottom: 0px;
+            margin-top: 0px; margin-bottom: 0px;
+        }
+
+        .user {font-family: "Comic Sans MS", cursive; color: #00c}
+  </style>
+</head>
+
+<body >
+<div class="heading">
+<p>CompSci 240, Low-level programming</p>
+<p class="asn">Temperature Conversions</p>
+</div><!-- heading -->
+
+<div class="assignment">
+
+<p>
+Write each of the following C programs, compile them and run them.
+For each one, submit the source file.
+</p>
+
+<p>
+Source code files must begin with a comment containing your name, the name of the assignment and a brief description of it (one line is sufficient), and the date you wrote it.  For example:
+</p>
+<pre class="code" style="width:40em;margin-left:4em;border:1px solid #000">
+/*
+  Alice ByteCoder
+  Assignment 1: Program to show powers of numbers in a table
+  October 15, 1582
+/*
+</pre>
+
+<table class="tasks">
+<thead><tr><th>points</th><th>task</th></tr></thead>
+<tbody>
+<tr>
+  <th>20%</th><td>formatted output</td>
+</tr><tr>
+  <th>20%</th><td>basic input</td>
+</tr><tr>
+  <th>20%</th><td><code>if-else</code> structure</td>
+</tr><tr>
+  <th>20%</th><td><code>for</code> loop, tabular output</td>
+</tr><tr>
+  <th>20%</th><td>character strings</td>
+</tr>
+</tbody></table>
+
+
+<dl class="tasks">
+  <dt>formatted output</dt>
+  <dd>
+    Write a program that creates some constant values, and uses formatted output to print them in a table in multiple ways.
+    The constants are:
+    <blockquote class="compact">
+    <ul class="compact">
+      <li>the value of &pi; (available as the named constant <code>M_PI</code> in <code>&lt;math.h&gt;</code>,</li>
+      <li>Avogadro's number --- an official value is given by <a href="http://physics.nist.gov/cgi-bin/cuu/Value?na">NIST</a> and copied by Wikipedia,</li>
+      <li>1500450271, which is a 10-digit prime number,</li>
+      <li>your name,</li>
+      <li>the first letter of the alphabet (your choice of upper or lower case).</li>
+    </ul>
+    </blockquote>
+
+    <p>
+    Use an appropriate variable type for each value, not a <code>#define</code>.
+    Each value must be displayed in a field exactly 25 characters wide, in a field exactly 15 characters wide, and in a field (at least) 5 characters wide.
+    Each field must have an underscore character ( <code>_</code> ) before and after it to make it visible.
+    </p><p>
+    Numbers must be displayed as <strong>floating-point</strong> values, as <strong>unsigned integer</strong> values, and as <strong>hexadecimal</strong> values.
+    </p><p>
+    The text string and the letter must be displayed both <strong>right-justified</strong> and <strong>left-justified</strong>, and also in <strong>hexadecimal</strong> (which will create compiler warnings).
+    </p><p>
+    Use the appropriate format specifiers to do this --- you will also have to convert the numeric values to the correct types for outputting purposes.
+    </p>
+    <p>
+    The following output shows what you should produce:
+    </p>
+<pre class="boxed" style="margin-left:1em;background:#fffff0">
+CONSTANT
+******************************************************************
+      pi: _3.14159265358979311599796_  _3.1415926535898_  _3.142_
+        : _                        3_  _              3_  _    3_
+        : _                        3_  _              3_  _    3_
+******************************************************************
+Avogadro: _6.0221408570000001519e+23_  _6.022140857e+23_  _6e+23_
+        : _                        0_  _              0_  _    0_
+        : _                        0_  _              0_  _    0_
+******************************************************************
+big prime: _               1500450271_  _     1500450271_  _2e+09_
+        : _               1500450271_  _     1500450271_  _1500450271_
+        : _                 596f0ddf_  _       596f0ddf_  _596f0ddf_
+******************************************************************
+    name: _               instructor_  _     instructor_  _instructor_
+        : _instructor               _  _instructor     _  _instructor_
+        : _                 8bd3d6c0_  _       8bd3d6c0_  _8bd3d6c0_
+******************************************************************
+  letter: _                        A_  _              A_  _    A_
+        : _A                        _  _A              _  _A    _
+        : _                       41_  _             41_  _   41_
+******************************************************************
+</pre>
+    Your name's hexadecimal output will probably be different from this example; that's okay.
+  </dd>
+
+  <dt>basic input</dt>
+  <dd>
+    Write a program that prompts you for your name, an integer, and a real (floating-point) number, then prints them  back out on a single line.
+    Example output should look similar to this:
+<pre class="boxed" style="margin-left:1em;background:#fffff0">
+Enter your name: <span class="user">foobar</span>
+Enter an integer and a real number: <span class="user">-9999 &nbsp;&nbsp; 314.159e-2</span>
+
+name: foobar; integer: -9999; real: 3.14159
+
+</pre>
+  </dd>
+
+  <dt><code>if-else</code> structure</dt>
+  <dd>
+    Write a program that converts between Celsius, Fahrenheit, and Kelvin temperatures.  It must prompt the user for a temperature, and the units that temperature is in (C, c, F, f, K, or k); then convert the temperature to both of the other scales and display the result.
+    Example output should look similar to this:
+<pre class="boxed" style="margin-left:1em;background:#fffff0">
+Temperature: <span class="user">98.6</span>
+Units: <span class="user">f</span>
+
+F: 98.6   C: 37   K: 310.15
+
+</pre>
+  </dd>
+
+  <dt><code>for</code> loop, tabular output</dt>
+  <dd>
+    Write a program that produces a wind-chill chart.
+    This is a chart that shows the "wind chill temperature" for a given air temperature (in degrees Fahrenheit) and wind speed (in miles per hour).
+    A sample is shown below.
+    <p>
+    Your program must prompt the user for minimum and maximum temperatures, and minimum and maximum wind speeds; then produce a two-dimensional chart like the one below.
+    Temperatures are in increments of two degrees; wind speeds are in increments of 2.5 mph.
+    Notice that the temperatures range from <em>highest</em> (top row) to <em>lowest</em> (bottom row).
+    </p>
+    <p>
+    A detailed description of wind chill is available from this <a href="http://www.crh.noaa.gov/gjt/Weather_Info/wchill.php">NOAA</a> webpage.
+    The formula for calculating wind chill is:
+    </p>
+    <div style="font-family: Courier, monospaced; font-weight: bold; font-size: 120%;">
+        <em style="color:#000099">WindChill</em> = 35.74 + (0.6215&nbsp;&times;&nbsp;<em style="color:#000099">Temp</em>) - (35.75&nbsp;&times;&nbsp;<em style="color:#000099">Wind</em><sup>0.16</sup>) + (0.4275&nbsp;&times;&nbsp;<em style="color:#000099">Temp</em>&nbsp;&times;&nbsp;<em style="color:#000099">Wind</em><sup>0.16</sup>) 
+    </div>
+    <p>
+    Note that you must take a non-integer power of the wind speed.  To do this, you need the <code>pow()</code> function, available in the <code>&lt;math.h&gt;</code> header file.  You will also need to link in the math library by using the <code class="bold">-lm</code> flag, like this:
+    <span class="code">
+        gcc&nbsp;-Wall&nbsp;&nbsp;-o&nbsp;asn2d&nbsp;asn2d.c&nbsp;&nbsp;-lm
+    </span>
+    </p>
+    <div style="margin: 4ex"></div>
+
+<pre class="boxed" style="margin-left:1em;background:#fffff0">
+Min, Max temperature: <span class="user">-8 8</span>
+Min, Max wind: <span class="user">0 9</span>
+
+  T \ W     0.0    2.5    5.0    7.5
+         ------ ------ ------ ------
+  8.0 |    40.7    3.3   -1.1   -3.9
+  6.0 |    39.5    1.0   -3.5   -6.3
+  4.0 |    38.2   -1.2   -5.8   -8.8
+  2.0 |    37.0   -3.4   -8.2  -11.2
+  0.0 |    35.7   -5.7  -10.5  -13.6
+ -2.0 |    34.5   -7.9  -12.9  -16.0
+ -4.0 |    33.3  -10.1  -15.2  -18.5
+ -6.0 |    32.0  -12.4  -17.6  -20.9
+ -8.0 |    30.8  -14.6  -19.9  -23.3
+</pre>
+  </dd>
+
+  <dt>character strings</dt>
+  <dd>
+  Write a program that accepts character strings from the user, and copies them into a single long string, until either (a) the user enters an empty string (nothing except possibly a "newline" &mdash; <code>'\n'</code>), or (b) 255 characters have been copied.
+  If you use <code>fgets()</code> it will include the terminating <code>'\n'</code>,
+  which must <em>not</em> be copied.
+  After all user input is done, the resulting string must be terminated with a NULL character and printed out.
+  <p>
+  There are standard functions that do this, such as <code>strncpy()</code> and <code>strncat()</code>, but you may not use them.
+  Instead, write your own code to do the copying.
+  </p>
+  <p>
+  For proper input you should use the <code>fgets()</code> function.
+  This function includes the terminating <code>'\n'</code>, which you must not copy.
+  It will be the last character of each input; you can either test for and skip any <code>'\n'</code> characters, or just stop before copying the last character.
+  </p>
+    Example output should look similar to this:
+<pre class="boxed" style="margin-left:1em;background:#fffff0">
+P:\&gt; asn2e.exe
+Your input: <span class="user">abcde</span>
+Your input: <span class="user">FG HIjkL</span>
+Your input:
+
+abcdeFG HIjkL
+
+</pre>
+  </dd>
+
+</dl>
+
+</div><!-- assignment -->
+
+<!-- This is a virtual-include file, not a complete webpage! 
+    It contains 'style="..."' parameters that mirror w3cvalid.css -->
+<hr style="clear:both;width:100%;margin-bottom:0" />
+<div id="Signature" style="float:left;margin-top:0;text-align:left;color:#999;font-size:70%;background:inherit;font-size:8pt;margin-top:0">
+Homepage: <a href="https://montcs.bloomu.edu/" title="Instructor">montcs.bloomu.edu/</a>
+ <br /><!--#config timefmt="%Y" -->&copy; 2004-<!--#echo var="DATE_LOCAL" --> Robert Montante unless otherwise indicated.  All rights reserved.
+ <br /><!--#config timefmt="%Y-%m-%d, %H:%M:%S" -->File last modified <em><!--#echo var="last_modified" --></em>
+</div>
+<div id="ValidButtons" style="float:right;margin-top:0.2ex;text-align:right;width:190px;margin:4px 0 0 0;padding:4px 0 0 0;font-size:6pt">
+ <a href="https://validator.w3.org/check?uri=referer"><img alt="Valid XHTML 1.0!" src="/includes/valid-xhtml10.png" style="border:0;width:88px;height:31px" /></a>&nbsp;<a href="https://jigsaw.w3.org/css-validator/check/referer"><img alt="Valid CSS!" src="/includes/vcss.png" style="border:0;width:88px;height:31px" /></a>
+</div>
+<!-- ....................................................... -->
+
+</body>
+</html>

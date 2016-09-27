@@ -1,0 +1,249 @@
+<a href="https://montcs.bloomu.edu/240/Asns/Asn.strings-pointers/asn.strings-pointers.shtml">https://montcs.bloomu.edu/240/Asns/Asn.strings-pointers/asn.strings-pointers.shtml</a>
+<br>
+<br>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="description" content="course assignment" />
+  <meta name="author" content="RAMontante" />
+  <style type="text/css">
+    @import url("/css/generic.css");
+    @import url("/css/pagefmt.css");
+    @import url("/css/w3cvalid.css");
+    @import url("/css/code-multi.css");
+    @import url("/css/assignment.css");
+  /*<![CDATA[*/
+    code {
+        font-family: monospace;
+        font-weight: bold;
+        color: #006;
+        padding: 2px 0.2ex 1px 0.2ex;
+    }
+    tbody th {
+        border-top: 1px dotted #ccc;
+    }
+    table#examples {
+        border-collapse: collapse;
+        border: 2px solid #555;
+        margin: 1em;
+        background: #f7f7f7;
+    }
+    table#examples tr {
+        border-bottom: 1px solid #333;
+    }
+    table#examples pre {
+        font-weight: normal;
+        background: #fff;
+        border: 1px solid #fff;
+        padding: 0.5ex 0.5em 0.5ex 0.5em;
+        margin: 2px 0.5em 2px 0.5em;
+    }
+    table#examples pre em {
+        font-size: 70%;
+        color: #55f;
+        background: #FFc;
+        padding: 1px 3px 1px 3px;
+        margin: 3px;
+    }
+    table#examples th {
+        border-bottom: 1px solid #333;
+        border-left: 1px dotted #555;
+        vertical-align: top;
+        text-align: left;
+    }
+  /*]]>*/
+  </style>
+  <title>CompSci 240 strings-pointers assignment</title>
+</head><body>
+
+<div class="heading">
+<p>CompSci 240, C and Assembly Programming</p>
+<p class="asn">assignment: Using Strings and Pointers</p>
+</div><!-- heading -->
+
+<div class="assignment">
+<h2>The task</h2>
+  <p>
+    Text strings in C are stored as arrays, and the name of the array is actually a pointer tho the first character (element) of that array.
+    For this assignment you must write a program that accepts (a) a code indicating a string processing operation to be performed, and (b) one or more text strings to be processed.
+    The possible codes, and operations, are:
+  </p>
+
+  <table>
+  <thead>
+    <tr><th>Code</th><td>Operation</td>,<td>ftn name</td></tr>
+  </thead><tbody>
+    <tr><th>0</th><td>count total length</td><td> <code>length()</code></tr>
+    <tr><th>1</th><td>Convert to all lowercase letters</td><td> <code>lower()</code></tr>
+    <tr><th>2</th><td>Convert to all capital letters</td><td> <code>upper()</code></tr>
+    <tr><th>3</th><td>Capitalize each word ("headline" mode)</td><td> <code>caps()</code></tr>
+  </tbody>
+  </table>
+
+<p class="HIDE">
+  The command line options (<code>argv</code>) will consist of a disk file name.
+  You must open and read input data from this file.
+  If the filename is invalid, your program should print a short but helpful message and quit.
+</p><p class="">
+  Your program may accept input from the console (keyboard).
+  For convenient testing, you should make a data file and redirect input from that.
+  Example data files are shown below.
+</p><p>
+  Use the <code>fgets()</code> function for all inputs.
+  Valid input consists of: the code, on a single line by itself; followed by <em>at least</em> one line of text (which may be only a single character long).
+  (Note: a blank line will still have a newline at the end, so it'll be a single character long.)
+  All 7-bit ASCII characters except <code>NUL</code> (ASCII 0x00) are possible, including digits, punctuation, and control characters such as <code>newline</code> (ASCII 0x0a) and <code>Ctrl-H</code> (ASCII 0x08), but only the letters A-Z and a-z can have their case converted.
+  You need not worry about 8-bit extended-ASCII, although the easiest approach (testing whether the character falls in the range of upper- or lowercase letters) should be unaffected by them.
+</p><p>
+  You may assume that all input lines are less than 2001 characters long.
+</p><p>
+  Program output is to <code>stdout</code>.
+</p>
+
+<h2>Pointers required</h2>
+<p>
+  You must write a separate function for each of the four operations.
+  Each of the functions should process a line of input at a time --- this will make operation 3 much easier.
+  The <code>fgets()</code> function will include the newline at the end of each line, which is a significant part of the input.
+</p><p>
+  You are <strong>not</strong> to use any of the built-in string functions (<code>strlen()</code>, <code>strcpy()</code>,  <code>strchr()</code>, etc.).
+  You must write your own functions as described below, and the must use character pointers rather than array indexes!
+</p>
+<ol>
+  <li>
+    <code>length()</code> must receive a pointer to an input string, and return an unsigned integer indicating the string's length.
+    Do this by "walking the string" until you find the terminating NULL value.
+  </li><li>
+    <code>lower()</code> must receive a pointer to a destination string, and a pointer to a source string, and copy the source to the destination one character at a time while converting all letters to lowercase.
+  </li><li>
+    <code>upper()</code> must receive a pointer to a destination string, and a pointer to a source string, and copy the source to the destination one character at a time while converting all letters to uppercase.
+  </li><li>
+    <code>caps()</code> must receive a pointer to a destination string, and a pointer to a source string, and copy the source to the destination one character at a time.
+    If the <em>preceding character</em> was a space, tab, or <code>'\r'</code> (ASCII 0x0d), or if the character being processed is the first character, then (if it's a letter) it must be capitalized.
+  </li>
+</ol>
+  
+<h2>Short example inputs and outputs</h2>
+<p>
+  The display of "non-printable" characters such as newline (ASCII 0x0a) and Ctrl-M (ASCII 0x0d) may vary from computer to computer.
+  The values are shown below to emphasize that they are copied without change.
+  The data file is available <a href="asn.strings-pointers.datafile">here</a>.
+</p>
+<table id="examples">
+<tbody>
+  <tr>
+    <th>file contents:
+<pre>0<em>(ASCII 0x0a)</em>
+aBcDe<em>(ASCII 0x0a)</em>
+ab<em>(ASCII 0x0a)</em>
+<em>(ASCII 0x0a)</em>
+A123$%^<em>(ASCII 0x0d)</em>C<em>(ASCII 0x0a)</em>
+a<em>(ASCII 0x0a)</em>
+AbCdE<em>(ASCII 0x0a)</em>
+<em>(ASCII 0x0a)</em>
+abcd efgh ijKL mnoP qrst 1uvw $xyz<em>(ASCII 0x0a)</em>
+</pre></th>
+    <th>output:
+    <pre>64</pre></th>
+  </tr>
+
+  <tr>
+    <th>file contents:
+<pre>1<em>(ASCII 0x0a)</em>
+aBcDe<em>(ASCII 0x0a)</em>
+ab<em>(ASCII 0x0a)</em>
+<em>(ASCII 0x0a)</em>
+A123$%^<em>(ASCII 0x0d)</em>C<em>(ASCII 0x0a)</em>
+a<em>(ASCII 0x0a)</em>
+AbCdE<em>(ASCII 0x0a)</em>
+<em>(ASCII 0x0a)</em>
+abcd efgh ijKL mnoP qrst 1uvw $xyz<em>(ASCII 0x0a)</em>
+</pre></th>
+    <th>output:
+<pre>
+
+abcde<em>(ASCII 0x0a)</em>
+ab<em>(ASCII 0x0a)</em>
+<em>(ASCII 0x0a)</em>
+a123$%^<em>(ASCII 0x0d)</em>c<em>(ASCII 0x0a)</em>
+a<em>(ASCII 0x0a)</em>
+abcde<em>(ASCII 0x0a)</em>
+<em>(ASCII 0x0a)</em>
+abcd efgh ijkl mnop qrst 1uvw $xyz<em>(ASCII 0x0a)</em>
+    </pre></th>
+  </tr>
+
+  <tr>
+    <th>file contents:
+<pre>2<em>(ASCII 0x0a)</em>
+aBcDe<em>(ASCII 0x0a)</em>
+ab<em>(ASCII 0x0a)</em>
+<em>(ASCII 0x0a)</em>
+A123$%^<em>(ASCII 0x0d)</em>C<em>(ASCII 0x0a)</em>
+a<em>(ASCII 0x0a)</em>
+AbCdE<em>(ASCII 0x0a)</em>
+<em>(ASCII 0x0a)</em>
+abcd efgh ijKL mnoP qrst 1uvw $xyz<em>(ASCII 0x0a)</em>
+    </pre></th>
+    <th>output:
+<pre>
+
+ABCDE<em>(ASCII 0x0a)</em>
+AB<em>(ASCII 0x0a)</em>
+<em>(ASCII 0x0a)</em>
+A123$%^<em>(ASCII 0x0d)</em>C<em>(ASCII 0x0a)</em>
+A<em>(ASCII 0x0a)</em>
+ABCDE<em>(ASCII 0x0a)</em>
+<em>(ASCII 0x0a)</em>
+ABCD EFGH IJKL MNOP QRST 1UVW $XYZ<em>(ASCII 0x0a)</em>
+    </pre></th>
+  </tr>
+
+  <tr>
+    <th>file contents:
+<pre>3<em>(ASCII 0x0a)</em>
+aBcDe<em>(ASCII 0x0a)</em>
+ab<em>(ASCII 0x0a)</em>
+<em>(ASCII 0x0a)</em>
+A123$%^<em>(ASCII 0x0d)</em>C<em>(ASCII 0x0a)</em>
+a<em>(ASCII 0x0a)</em>
+AbCdE<em>(ASCII 0x0a)</em>
+<em>(ASCII 0x0a)</em>
+abcd efgh ijKL mnoP qrst 1uvw $xyz<em>(ASCII 0x0a)</em>
+    </pre></th>
+    <th>output:
+<pre>
+
+ABcDe<em>(ASCII 0x0a)</em>
+Ab<em>(ASCII 0x0a)</em>
+<em>(ASCII 0x0a)</em>
+A123$%^<em>(ASCII 0x0d)</em>C<em>(ASCII 0x0a)</em>
+A<em>(ASCII 0x0a)</em>
+AbCdE<em>(ASCII 0x0a)</em>
+<em>(ASCII 0x0a)</em>
+Abcd Efgh IjKL MnoP Qrst 1uvw $xyz<em>(ASCII 0x0a)</em>
+    </pre></th>
+  </tr>
+
+</tbody
+</table>
+
+</div><!-- assignment -->
+
+<!-- ....................................................... -->
+<!-- This is a virtual-include file, not a complete webpage! 
+    It contains 'style="..."' parameters that mirror w3cvalid.css -->
+<hr style="clear:both;width:100%;margin-bottom:0" />
+<div id="Signature" style="float:left;margin-top:0;text-align:left;color:#999;font-size:70%;background:inherit;font-size:8pt;margin-top:0">
+Homepage: <a href="https://montcs.bloomu.edu/" title="Instructor">montcs.bloomu.edu/</a>
+ <br /><!--#config timefmt="%Y" -->&copy; 2004-<!--#echo var="DATE_LOCAL" --> Robert Montante unless otherwise indicated.  All rights reserved.
+ <br /><!--#config timefmt="%Y-%m-%d, %H:%M:%S" -->File last modified <em><!--#echo var="last_modified" --></em>
+</div>
+<div id="ValidButtons" style="float:right;margin-top:0.2ex;text-align:right;width:190px;margin:4px 0 0 0;padding:4px 0 0 0;font-size:6pt">
+ <a href="https://validator.w3.org/check?uri=referer"><img alt="Valid XHTML 1.0!" src="/includes/valid-xhtml10.png" style="border:0;width:88px;height:31px" /></a>&nbsp;<a href="https://jigsaw.w3.org/css-validator/check/referer"><img alt="Valid CSS!" src="/includes/vcss.png" style="border:0;width:88px;height:31px" /></a>
+</div>
+<!-- ....................................................... -->
+
+</body></html>

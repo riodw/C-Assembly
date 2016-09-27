@@ -1,0 +1,215 @@
+<a href="https://montcs.bloomu.edu/240/Asns/02.parse-arithmetic.shtml">https://montcs.bloomu.edu/240/Asns/02.parse-arithmetic.shtml</a>
+<br>
+<br>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  <title>CompSci 240 parse-arithmetic assignment</title>
+  <meta name="description" content="course assignment" />
+  <meta name="author" content="RAMontante" />
+  <style type="text/css">
+  /*<![CDATA[*/
+    @import url("http://montcs.bloomu.edu/~bobmon/css/generic.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/pagefmt.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/w3cvalid.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/code-multi.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/assignment.css");
+
+    pre.code {
+        font-weight: normal;
+        color: #555;
+        padding:4px;
+    }
+    pre.code strong {
+        font-weight: bold;
+        color: #339;
+    }
+  /*]]>*/
+  </style>
+  <script type="text/javascript" src="http://montcs.bloomu.edu/~bobmon/js/numQs.js"></script>
+  <script type="text/javascript" src="http://montcs.bloomu.edu/~bobmon/js/asnpoints.js"></script>
+
+</head> <body onload="numberItems('Question&nbsp;');setTotalPoints('qpts','pts');">
+
+<div class="heading">
+<p>CompSci 240, Low-level Programming</p>
+<p class="asn">assignment: Parse Arithmetic Expression</p>
+<p id="pts"> points?  </p>
+</div><!-- heading -->
+
+<div class="assignment">
+<h2>Overview</h2>
+<p>
+Write a program that reads simple arithmetic expressions from stdin, and evaluates them.
+(This is an exercise in <code>if</code> and <code>switch</code> statements.)
+</p><p>
+Legal expressions have the form:
+<pre class="code"><strong>
+    &lt;left-value&gt;  &lt;operator&gt;  &lt;right-value&gt;
+</strong></pre>
+where <span>&lt;left-value&gt;</span> and <span>&lt;right-value&gt;</span> are floating-point numbers,
+and <span>&lt;operator&gt;</span> is a single-character operator such as
+<code>+</code>,
+<code>-</code>,
+<code>*</code>,
+<code>/</code>,
+etc.
+The full list of required operators is given below.
+The operator may be surrounded by whitespace, but doesn't have to be.
+You should be able to handle expressions with whitespace around the operator, as well as expressions without whitespace (see the example output below).
+</p><p>
+You may assume that inputs are syntactically legal (the user follows the pattern correctly), and the numbers are legally formed values.
+However, it must handle improper/unrecognized operators with a suitable message.
+Also, some legal inputs do not give valid arithmetic.
+For example, division by 0 is illegal.
+Your program must check for such special cases, and print out a suitable message instead of trying to do the math.
+</p>
+
+<h3>Turn in:</h3>
+
+Submit
+<ul><li>
+the source-code file
+</li><li>
+a file containing a sample run, similar to the one below
+</li></ul>
+<p>
+Source code files must begin with a comment containing your name, the name of the assignment and a brief description of it (one line is sufficient), and the date you wrote it.  For example:
+</p>
+<pre class="code" style="width:40em;margin-left:4em;border:1px solid #000">
+/*
+  Alice ByteCoder
+  Assignment 1: Program to show powers of numbers in a table
+  October 15, 1582
+/*
+</pre>
+
+<div class="HIDE">
+<h2>Grading</h2>
+<ul><li>
+  <em class="qpts">30%:&nbsp;</em> program compiles and runs.
+</li><li>
+  <em class="qpts">50%:&nbsp;</em> program produces correct answers for all operators, over entire domain of inputs
+</li><li>
+  <em class="qpts">20%:&nbsp;</em> program output is nicely formatted.
+</li></ul>
+</div>
+
+<h2>Required operators:</h2>
+<ul><li>
+    <code>+</code> &mdash; addition of floats
+</li><li>
+    <code>-</code> &mdash; subtraction of floats
+</li><li>
+    <code>*</code> &mdash; multiplication of floats
+</li><li>
+    <code>/</code> &mdash; division of floats
+</li><li>
+    <code>\</code> &mdash; division of integers
+</li><li>
+    <code>%</code> &mdash; modulo (remainder) of integers
+</li><li>
+    <code>p</code> &mdash; power: <em>left-arg</em> raised to the power of <em>right-arg</em>
+</li><li>
+    <code>l</code> &mdash; logarithm: log( <em>left-arg</em> ) to the base <em>right-arg</em>
+</li></ul>
+
+
+<hr />
+<h2>Example output</h2>
+
+<pre class="code boxed" style="width:50em">
+<em>Script started on Sun 04 Sep 2011 03:44:01 PM EDT
+bash .bashrc, for bobmon: UID 1000</em>
+<span style="color:#00e;font-weight:bold">&gt; </span> 
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>gcc -Wall -o p1 p1.simple-expressions.c</strong>
+/tmp/ccbqUb0Q.o: In function `main':
+p1.simple-expressions.c:(.text+0x219): undefined reference to `pow'
+p1.simple-expressions.c:(.text+0x28d): undefined reference to `log'
+p1.simple-expressions.c:(.text+0x29c): undefined reference to `log'
+collect2: ld returned 1 exit status
+<span style="color:#00e;font-weight:bold">&gt; </span><strong>gcc  -Wall -o p1 p1.simple-expressions.c <span style="font-size:larger;color:#700"> -lm </span></strong>
+<span style="color:#00e;font-weight:bold">&gt; </span> 
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>p1</strong>
+p1: command not found
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>./p1</strong>
+Enter: number, operator, number, on one line:
+4 + 8.7
+a+b == 12.7000
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>./p1</strong>
+Enter: number, operator, number, on one line:
+2+2
+a+b == 4.0000
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>./p1</strong>
+Enter: number, operator, number, on one line:
+2 * 2
+a*b == 4.0000
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>./p1</strong>
+Enter: number, operator, number, on one line:
+-99 / 0
+Cannot divide by zero.
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>./p1</strong>
+Enter: number, operator, number, on one line:
+99 / 7
+a/b == 14.1429
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>./p1</strong>
+Enter: number, operator, number, on one line:
+99 \ 7
+a/b == 14
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>./p1</strong>
+Enter: number, operator, number, on one line:
+99 % 7
+a%b == 1
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>./p1</strong>
+Enter: number, operator, number, on one line:
+7 * 14
+a*b == 98.0000
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>./p1</strong>
+Enter: number, operator, number, on one line:
+7*14
+a*b == 98.0000
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>./p1</strong>
+Enter: number, operator, number, on one line:
+7 - 99
+a-b == -92.0000
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>./p1</strong>
+Enter: number, operator, number, on one line:
+3 p 0
+a to the bth power == 1.0000
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>./p1</strong>
+Enter: number, operator, number, on one line:
+99 l 7
+base-b log of a == 2.3614
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>./p1</strong>
+Enter: number, operator, number, on one line:
+3 l 1
+Cannot calculate a base-1 logarithm.
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>./p1</strong>
+Enter: number, operator, number, on one line:
+4 = 5
+Unknown operator =
+<span style="color:#00e;font-weight:bold">&gt; </span> <strong>exit</strong>
+exit
+
+<em>Script done on Sun 04 Sep 2011 03:54:02 PM EDT</em>
+</pre>
+
+</div><!-- assignment -->
+
+<!-- ....................................................... -->
+<!-- This is a virtual-include file, not a complete webpage! 
+    It contains 'style="..."' parameters that mirror w3cvalid.css -->
+<hr style="clear:both;width:100%;margin-bottom:0" />
+<div id="Signature" style="float:left;margin-top:0;text-align:left;color:#999;font-size:70%;background:inherit;font-size:8pt;margin-top:0">
+Homepage: <a href="https://montcs.bloomu.edu/" title="Instructor">montcs.bloomu.edu/</a>
+ <br /><!--#config timefmt="%Y" -->&copy; 2004-<!--#echo var="DATE_LOCAL" --> Robert Montante unless otherwise indicated.  All rights reserved.
+ <br /><!--#config timefmt="%Y-%m-%d, %H:%M:%S" -->File last modified <em><!--#echo var="last_modified" --></em>
+</div>
+<div id="ValidButtons" style="float:right;margin-top:0.2ex;text-align:right;width:190px;margin:4px 0 0 0;padding:4px 0 0 0;font-size:6pt">
+ <a href="https://validator.w3.org/check?uri=referer"><img alt="Valid XHTML 1.0!" src="/includes/valid-xhtml10.png" style="border:0;width:88px;height:31px" /></a>&nbsp;<a href="https://jigsaw.w3.org/css-validator/check/referer"><img alt="Valid CSS!" src="/includes/vcss.png" style="border:0;width:88px;height:31px" /></a>
+</div>
+<!-- ....................................................... -->
+
+</body></html>

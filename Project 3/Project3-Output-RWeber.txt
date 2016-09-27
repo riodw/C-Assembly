@@ -1,0 +1,73 @@
+rio@rio-Ubuntu:~/Desktop/Project3$ gcc -Wall -o p3 P3Case.c -lm
+rio@rio-Ubuntu:~/Desktop/Project3$ ./p3
+
+Enter: number, operator, number, on one line:
+4 + 8.7
+a+b == 12.7000
+rio@rio-Ubuntu:~/Desktop/Project3$ ./p3
+
+Enter: number, operator, number, on one line:
+2+2
+a+b == 4.0000
+rio@rio-Ubuntu:~/Desktop/Project3$ ./p3
+
+Enter: number, operator, number, on one line:
+2 * 2
+a*b == 4.0000
+rio@rio-Ubuntu:~/Desktop/Project3$ ./p3
+
+Enter: number, operator, number, on one line:
+-99 / 0
+Cannot divide by zero.
+rio@rio-Ubuntu:~/Desktop/Project3$ ./p3
+
+Enter: number, operator, number, on one line:
+99 / 7
+a/b == 14.1429
+rio@rio-Ubuntu:~/Desktop/Project3$ ./p3
+
+Enter: number, operator, number, on one line:
+99 \ 7
+a/b == 14
+rio@rio-Ubuntu:~/Desktop/Project3$ ./p3
+
+Enter: number, operator, number, on one line:
+99 % 7
+a%b == 1
+rio@rio-Ubuntu:~/Desktop/Project3$ ./p3
+
+Enter: number, operator, number, on one line:
+7 * 14
+a*b == 98.0000
+rio@rio-Ubuntu:~/Desktop/Project3$ ./p3
+
+Enter: number, operator, number, on one line:
+7*14
+a*b == 98.0000
+rio@rio-Ubuntu:~/Desktop/Project3$ ./p3
+
+Enter: number, operator, number, on one line:
+7 - 99
+a-b == -92.0000
+rio@rio-Ubuntu:~/Desktop/Project3$ ./p3
+
+Enter: number, operator, number, on one line:
+3 p 0
+a to the bth power == 1.0000
+rio@rio-Ubuntu:~/Desktop/Project3$ ./p3
+
+Enter: number, operator, number, on one line:
+99 l 7
+base-b log of a == 2.3614
+rio@rio-Ubuntu:~/Desktop/Project3$ ./p3
+
+Enter: number, operator, number, on one line:
+3 l 1
+Cannot calculate a base-1 logarithm.
+rio@rio-Ubuntu:~/Desktop/Project3$ ./p3
+
+Enter: number, operator, number, on one line:
+4 = 5
+Unknown operator =
+rio@rio-Ubuntu:~/Desktop/Project3$ 
+

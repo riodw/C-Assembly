@@ -1,0 +1,137 @@
+<a href="https://montcs.bloomu.edu/240/Asns/03.unsigned-conversions.shtml">https://montcs.bloomu.edu/240/Asns/03.unsigned-conversions.shtml</a>
+<br>
+<br>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  <meta name="description" content="course assignment" />
+  <meta name="author" content="RAMontante" />
+  <link href="http://montcs.bloomu.edu/~bobmon/css/generic.css" rel="stylesheet" type="text/css" />
+   <link href="http://montcs.bloomu.edu/~bobmon/css/w3cvalid.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+  /*<![CDATA[*/
+    @import url("http://montcs.bloomu.edu/~bobmon/css/pagefmt.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/code-multi.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/assignment.css");
+  /*]]>*/
+  </style>
+  <title>56-240 unsigned conversions assignment</title>
+</head><body>
+
+<div class="heading">
+<p>56-240, C and Assembly Programming</p>
+<p class="asn">Conversions of Unsigned Numbers</p>
+</div><!-- heading -->
+
+<div class="assignment">
+<p>
+This assignment calls for two separate (but related) programs.
+The programs perform number conversions:
+</p>
+  <dl>
+    <dt><strong>Unsigned decimal to other base</strong>.</dt>
+    <dt><strong>Other base to unsigned decimal</strong>.</dt>
+  </dl>
+
+<p>
+  Each program must implement a conversion algorithm such as those described in class.
+  Since C is only capable of working accepting base-10, base-8, and base-16 numbers,
+  you will need to represent all bases (except 10) in a character format.
+  This is just an extension of the problem with producing binary bitstrings.
+</p><p>
+Write your programs to use separate functions for each step of the algorithm.
+These functions can then be re-used for some of the steps of the following assignment, which requires conversions of signed numbers with decimal points.
+</p>
+
+
+<ol class="parts">
+<li>
+Write a decimal-to-base conversion program.
+Your program must accept a (base-10, unsigned) integer, and a base.
+The base can be any value from 2 through 16 (specified in base-10).
+Convert the input value to the specified base, and display the result.
+<p>
+As discussed in class, the converted value is a null-terminated text string that you generate one "digit" at a time. 
+You may assume that the input value will be no greater than <code>2<sup>64</sup>-1</code> (the largest possible unsigned integer), and therefore the output will be no more than 64 characters long.
+</p>
+<p>
+Make sure you can handle an input of 0 (zero)!
+</p>
+
+<p>Example output (as run from a Windows command prompt &mdash; Linux programs generally don't have the ".exe" extension):</p>
+<pre class="outputbox"><span class="prompt">P:\&gt;</span><em> d2b.exe</em>
+Enter a decimal value, and a desired base: 35 9
+
+35 equals 38 (base-9)
+<span class="prompt">P:\&gt;</span><em></em>
+
+<span class="prompt">P:\&gt;</span><em> d2b.exe</em>
+Enter a decimal value, and a desired base: 0
+3
+
+0 equals 0 (base-3)
+<span class="prompt">P:\&gt;</span><em></em>
+</pre>
+
+<p>
+  You may assume that all inputs from the console are valid numbers followed by "newlines".
+  Additional processing, to ignore/discard extraneous "garbage" input, is not required (but naturally is acceptable).
+</p>
+<p>
+  As a practical matter, you may have fewer "oddities" running your program if you use a separate <code>scanf()</code> statement for each input value.
+  This will work even if the inputs are given on the same line (as in the example above).
+  For example: <code>scanf("&nbsp;%u",&nbsp;&amp;number);&nbsp;scanf("&nbsp;%u",&nbsp;&amp;base);</code>
+</p>
+
+</li>
+
+<li>
+Write a base-to-decimal conversion program.
+Your program must accept a text string that represents a value, and an integer for the base.
+The base can be any value from 2 through 16 (specified in base-10).
+Convert the input string from the specified base into a numeric value, and display the result (as an unsigned integer).
+<p>
+You may assume that the input value will represent a number no greater than <code>2<sup>64</sup>-1</code> (the largest possible unsigned integer, 18446744073709551615).
+This implies that the input string will be no more than 64 characters long.
+</p>
+<p>
+Make sure you can handle an input of 0 (zero)!
+</p>
+
+<p>Example output (as run from a Windows command prompt):</p>
+<pre class="outputbox"><span class="prompt">P:\&gt;</span><em> b2d.exe</em>
+Enter a value, and a desired base: 38 9
+
+38 (base-9) equals 35
+<span class="prompt">P:\&gt;</span><em></em>
+
+<span class="prompt">P:\&gt;</span><em> b2d.exe</em>
+Enter a value, and a desired base: 0 3
+
+0 (base-3) equals 0
+<span class="prompt">P:\&gt;</span><em></em>
+</pre>
+
+</li>
+
+</ol>
+
+</div><!-- assignment -->
+
+<!-- ....................................................... -->
+<!-- This is a virtual-include file, not a complete webpage! 
+    It contains 'style="..."' parameters that mirror w3cvalid.css -->
+<hr style="clear:both;width:100%;margin-bottom:0" />
+<div id="Signature" style="float:left;margin-top:0;text-align:left;color:#999;font-size:70%;background:inherit;font-size:8pt;margin-top:0">
+Homepage: <a href="https://montcs.bloomu.edu/" title="Instructor">montcs.bloomu.edu/</a>
+ <br /><!--#config timefmt="%Y" -->&copy; 2004-<!--#echo var="DATE_LOCAL" --> Robert Montante unless otherwise indicated.  All rights reserved.
+ <br /><!--#config timefmt="%Y-%m-%d, %H:%M:%S" -->File last modified <em><!--#echo var="last_modified" --></em>
+</div>
+<div id="ValidButtons" style="float:right;margin-top:0.2ex;text-align:right;width:190px;margin:4px 0 0 0;padding:4px 0 0 0;font-size:6pt">
+ <a href="https://validator.w3.org/check?uri=referer"><img alt="Valid XHTML 1.0!" src="/includes/valid-xhtml10.png" style="border:0;width:88px;height:31px" /></a>&nbsp;<a href="https://jigsaw.w3.org/css-validator/check/referer"><img alt="Valid CSS!" src="/includes/vcss.png" style="border:0;width:88px;height:31px" /></a>
+</div>
+<!-- ....................................................... -->
+
+</body></html>

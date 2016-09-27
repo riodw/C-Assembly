@@ -1,0 +1,162 @@
+<a href="https://montcs.bloomu.edu/240/Asns/00.C-intro/asn.C-size.shtml">https://montcs.bloomu.edu/240/Asns/00.C-intro/asn.C-size.shtml</a>
+<br>
+<br>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  <title>CompSci 240 C-sizes assignment</title>
+  <meta name="description" content="course assignment" />
+  <meta name="author" content="RAMontante" />
+  <style type="text/css">
+  /*<![CDATA[*/
+    @import url("http://montcs.bloomu.edu/~bobmon/css/generic.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/pagefmt.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/w3cvalid.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/code-multi.css");
+    @import url("http://montcs.bloomu.edu/~bobmon/css/assignment.css");
+
+  /*]]>*/
+  </style>
+</head><body >
+<div class="heading">
+<p>CompSci 240, Low-level Programming</p>
+<p class="asn">assignment: Introduction to C</p>
+</div><!-- heading -->
+
+<div class="assignment">
+<h2>Overview</h2>
+<p>
+The goals of this assignment are to use some basic I/O, and get a simple sense of how C compares to other languages.
+You will write a series of programs, and turn in source listings and answers to some questions about the programs; details are specified at the end of this writeup.
+</p>
+<blockquote>
+The GCC ("Gnu Compiler Collection") family of compilers is the standard C and C++ compiler on Linux distributions, and is available for many other systems, in particular for MS-DOS and MS-Windows.
+It is a command-line compiler, not a full IDE, so an editor is required to actually write the files.
+The SciTE editor is a simple GUI-oriented programmer's editor that is also available on many systems, specifically Linux and MS-Windows.
+</blockquote>
+
+<hr />
+
+<h2>The programs</h2>
+<ol><li>
+    Write the first "hello world" program as shown on pp.6&ndash;7 of Kernighan.
+    See below for the required comments.
+    Name the source file "p1.c".
+    <p>
+    <ol class="compact"><li>
+        Compile your program with this command:
+        <code>gcc -Wall -c p1.c</code>
+        to produce the <em>object</em> file "p1.o".
+    </li><li>
+        Then run the command:
+        <code>gcc -o p1 p1.o</code>
+        to produce an executable file.
+    </li><li>
+        Finally, try running the program as <code>./p1</code>.
+        </p>
+    </li></ol>
+    <p>
+    How big (in bytes) are the the three files "p1.c", "p1.o", and "p1"?
+    </p>
+    <pre class="smaller boxed w350">
+    /*
+      "Hello world" program - the Kernighan and Ritchie version.
+      CompSci 240
+      YOUR NAME
+      YOUR DATE
+    */
+    #include &lt;stdio.h&gt;
+    main()
+    {
+        printf( "Hello, world\n" );
+    }
+    </pre>
+</li><li>
+    Create a modified version of the source file and name it "p1a.c".
+    This version must use the complete prototype for <code>main()</code> as described in class.
+    (See the example below, under "Submit your assignment".)
+    <p>
+    Compile this one as before, with appropriate names.
+    How big (in bytes) are the the three files "p1a.c", "p1a.o", and "p1a"?
+    </p>
+</li><li>
+    Create another version of the source file and name it "p1b.c".
+    This version must use three <code>printf()</code> statments, as on pg.8 of Kernighan; but also use the complete prototype for <code>main()</code> as described in class.
+    <p>
+    Compile this one as before, with appropriate names.
+    How big (in bytes) are the the three files "p1b.c", "p1b.o", and "p1b"?
+    </p>
+</li><li>
+    Create a fourth version of the source file and name it "p1c.c".
+    Replace the <code>printf()</code> statements of "p1b.c" with <code>puts()</code> statements.
+    (Again, use the complete prototype for <code>main()</code> as described in class.)
+    <p>
+    Compile this one as before, with appropriate names.
+    How big (in bytes) are the the three files "p1c.c", "p1c.o", and "p1c"?
+    </p>
+</li><li>
+    Create a fifth version of the source file and name it "p1d.c".
+    For this version, use a separate <code>putchar()</code> statement for each single character of the message.
+    (Again, use the complete prototype for <code>main()</code> as described in class.)
+    <p>
+    Compile this one as before, with appropriate names.
+    How big (in bytes) are the the three files "p1d.c", "p1d.o", and "p1d"?
+    </p>
+</li><li>
+    How do the sizes of the five <em>object</em> files compare?
+</li><li>
+    How do the sizes of the five <em>executable</em> files compare?
+    Do these versions do the same thing, or different things?
+</li></ol>
+
+<h2>Submit your assignment</h2>
+<p>
+Every program must begin with a set of comments that includes the program's name/description, your name, and the due date (or date of submission).
+For example:
+</p>
+<blockquote class="boxed w350">
+    <object type="text/html" width="300" height="300" data="hello_C.html">
+        <pre>
+    /*
+      "Hello world" program - the Kernighan and Ritchie version.
+      CompSci 240
+      YOUR NAME
+      YOUR DATE
+    */
+
+    #include &lt;stdio.h&gt;
+
+    int main(int argc, char *argv[])
+    {
+        printf( "Hello, world\n" );
+        return 0;
+    }
+        </pre>
+    </object>
+</blockquote>
+
+<p>
+Submit each source file, plus any written answers as a text file, through the course submission link:
+<a href="http://montcs.bloomu.edu/~bobmon/cgi-bin/Upload_Asn/submit_file.py?preselectedCourse=240">
+montcs.bloomu.edu/~bobmon/cgi-bin/Upload_Asn/submit_file.py
+</a>
+</p>
+</div><!-- assignment -->
+
+<!-- ....................................................... -->
+<!-- This is a virtual-include file, not a complete webpage! 
+    It contains 'style="..."' parameters that mirror w3cvalid.css -->
+<hr style="clear:both;width:100%;margin-bottom:0" />
+<div id="Signature" style="float:left;margin-top:0;text-align:left;color:#999;font-size:70%;background:inherit;font-size:8pt;margin-top:0">
+Homepage: <a href="https://montcs.bloomu.edu/" title="Instructor">montcs.bloomu.edu/</a>
+ <br /><!--#config timefmt="%Y" -->&copy; 2004-<!--#echo var="DATE_LOCAL" --> Robert Montante unless otherwise indicated.  All rights reserved.
+ <br /><!--#config timefmt="%Y-%m-%d, %H:%M:%S" -->File last modified <em><!--#echo var="last_modified" --></em>
+</div>
+<div id="ValidButtons" style="float:right;margin-top:0.2ex;text-align:right;width:190px;margin:4px 0 0 0;padding:4px 0 0 0;font-size:6pt">
+ <a href="https://validator.w3.org/check?uri=referer"><img alt="Valid XHTML 1.0!" src="/includes/valid-xhtml10.png" style="border:0;width:88px;height:31px" /></a>&nbsp;<a href="https://jigsaw.w3.org/css-validator/check/referer"><img alt="Valid CSS!" src="/includes/vcss.png" style="border:0;width:88px;height:31px" /></a>
+</div>
+<!-- ....................................................... -->
+
+</body></html>
