@@ -90,8 +90,6 @@ Source code files must begin with a comment containing your name, the name of th
 
 </table>
 
-<dl class="tasks">
-
 <dt>formatted output</dt>
 
 Write a program that creates some constant values, and uses formatted output to print them in a table in multiple ways. The constants are:
@@ -212,5 +210,3 @@ abcdeFG HIjkL
 </pre>
 
 </dd>
-
-</dl>
