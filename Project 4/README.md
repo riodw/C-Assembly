@@ -4,16 +4,11 @@ C & Assembly - COMPSCI 240
 ### Original Instructions:
 #### [https://montcs.bloomu.edu/240/Asns/Asn.char-counting](https://montcs.bloomu.edu/240/Asns/Asn.char-counting)
 --------------------
-**INSTRUCTIONS**
-<div class="heading">
+**INSTRUCTIONS:**
 
 CompSci 240, C and Assembly Programming
 
 assignment: Counting characters
-
-</div>
-
-<div class="assignment">
 
 ## Assignment
 
@@ -114,7 +109,3 @@ Notice that the last line of this datafile doesn't end with a newline...
 ![Jabberwocky-counts](/240/Asns/Asn.char-counting/Jabberwocky-counts.png)
 
 (The most common character is a space, and the least common is an apostrophe.)
-
-</div>
-
-<script type="text/javascript">ts_validate();</script>
