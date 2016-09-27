@@ -2,7 +2,7 @@
 C & Assembly - COMPSCI 240
 ## Project 8 : Assembly-Language `puts()`
 ----------------------
-** INSTRUCTIONS**
+**INSTRUCTIONS**
 
 CompSci 240, C and Assembly programming
 
