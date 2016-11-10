@@ -1,4 +1,5 @@
-/* Contert Command line binary strings ('bitstrings') to decimal values
+/* Conversions of Unsigned Numbers - Pt.1
+* Base-to-decimal Conversion
 * PROJECT 6 - pt 2
 * 10/18/2015
 * Rio Weber
