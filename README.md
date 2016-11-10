@@ -43,9 +43,13 @@ Directory
   * Project6-pt2.c - Base-to-decimal Conversion
 7. **[Project 7](https://github.com/riodw/C-Assembly/tree/master/Project%207) - Signed, Fixed-point Conversions**
   * signed_magnitude2base.c - Signed, Fixed-point Conversions
+  
 ### Assembly Language
 8. **[Project 8](https://github.com/riodw/C-Assembly/tree/master/Project%208) - Assembly-Language puts()**
   * *Implement the C "puts()"function as an assembly-language routine, and modify the "hello-world" assembly program to use it.*
   * puts.asm - C `puts()` in Assembly
   * test.c - Test puts() assembly function
 9. **[Project 9](https://github.com/riodw/C-Assembly/tree/master/Project%209) - Harmonic Mean**
+  * *Write a program that reads a series of floating-point numbers from stdin into an array, then calculates the harmonic mean of the numbers.*
+  * harmean.asm - assembly harmonic average calculator
+  * Project9.c
