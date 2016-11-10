@@ -1,6 +1,6 @@
 /*
 * Project 2 - structure
-* P2File2.c
+* P2File3.c
 * COMPSCI 240
 * Rio Weber
 * 9-9-2015
