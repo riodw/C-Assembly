@@ -1,9 +1,3 @@
-/* solution for strings-pointers assignment
-* All functions assume legal input.
-*
-* 2014-10-15 instructor
-*/
-
 unsigned length(char *in)
 {
     unsigned total = 0;
