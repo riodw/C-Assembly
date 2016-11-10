@@ -1,4 +1,4 @@
-/* Conversions of Unsigned Numbers - Pt.1
+/* Conversions of Unsigned Numbers - Pt.2
 * Base-to-decimal Conversion
 * PROJECT 6 - pt 2
 * 10/18/2015
