@@ -1,7 +1,3 @@
-/*
-    a solution to the character-counting assignment
-    2013-10-05 -bob,mon.
-*/
 #include <stdio.h>
 #include<string.h>
 #include <limits.h>
