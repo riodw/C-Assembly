@@ -11,3 +11,23 @@ Develops programming skills using C and Assembly languages. This course provides
 
 > This site shows all commands and operations for coding Assembly Language
 
+---
+Directory
+=========
+1. **[Project 1](https://github.com/riodw/C-Assembly/tree/master/Project%201)**
+  * *The goals of this assignment are to use some basic I/O, and get a sense of how C compares to other languages. You will write a series of programs, and turn in source listings and answers to some questions about the programs.*
+  * pl.c
+  * pla.c
+  * plb.c
+  * plc.c
+  * pld.c
+2. **[Project 2](https://github.com/riodw/C-Assembly/tree/master/Project%202)**
+  * *Temperature Conversions*
+  * P2File1.c - Formatted Output
+  * P2File2.c - Basic Input
+  * P2File3.c - Structure
+  * P2File4.c - Loop, Tabular output
+  * P2File5.c - Character Strings
+3. **[Project 3](https://github.com/riodw/C-Assembly/tree/master/Project%203)**
+  * *Write a program that reads simple arithmetic expressions from stdin, and evaluates them.*
+  * P3Case.c - Parse Arithmetic
